@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+         body, div {
+             margin:0;
+             padding:0;
+             border:0;
+             font-weight:inherit;
+             font-style:inherit;
+             font-size:100%;
+             text-decoration:none;
+             vertical-align:baseline;
+         }
+
+        </style>
+    </head>
+    <body class="adv_search">
+
+        <div class="adv_header">
+
+            <div id="adv_search_logo">
+                <span id="adv_search_logo"></span>
+            </div>
+
+            <div id="adv_search_label">
+                <label style="margin-left:10px">Advanced Search</label> 
+            </div>
+
+            <div id="link">
+                <a href="index.html">Google Search</a>
+            </div>
+
+
+        </div>
+
+
+        <div id="adv_search_main">
+            <form id="adv_search" action="https://google.com/search">
+                <div class="adv_search_header">
+                    <div class="title">
+                        <span class="title">
+                            Find pages with...
+                        </span>
+                    </div>
+                    <div class="whitespace"> &emsp; </div>
+                    <div class="instruction">
+                        <div class="instruction_header">
+                            To do this in the search box.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="adv_searchboxes">
+                    <div class="adv_searchbox">
+                        <div class="searchbox_title">
+                            <div class="searchbox_title_inner"><span>all these words:</span></div>
+                        </div>
+                        <div class="searchbox_form">
+                            <div class="searchbox_form_inner"><input class="adv_search_input" id="all" name="as_q" type="text" value=""/></div>
+                        </div>
+                        <div class="searchbox_description">
+                            <div class="searchbox_description_inner">Type the important words: tri-colour rat terrier</div>
+                        </div>
+                    </div>
+
+                    <div class="adv_searchbox">
+                        <div class="searchbox_title">
+                            <div class="searchbox_title_inner"><span>this exact word or phrase:</span></div>
+                        </div>
+                        <div class="searchbox_form">
+                            <div class="searchbox_form_inner"><input class="adv_search_input" id="exact" name="as_epq" type="text"></div>
+                        </div>
+                        <div class="searchbox_description">
+                            <div class="searchbox_description_inner">Put exact words in quotes: "rat terrier"</div>
+                        </div>
+                    </div>
+
+                    <div class="adv_searchbox">
+                        <div class="searchbox_title">
+                            <div class="searchbox_title_inner"><span>any of these words:</span></div>
+                        </div>
+                        <div class="searchbox_form">
+                            <div class="searchbox_form_inner"><input class="adv_search_input" id="any" name="as_oq" type="text" /></div>
+                        </div>
+                        <div class="searchbox_description">
+                            <div class="searchbox_description_inner">Type OR between all the words you want: miniature OR standard</div>
+                        </div>
+                    </div>
+
+                    <div class="adv_searchbox">
+                        <div class="searchbox_title">
+                            <div class="searchbox_title_inner"><span>none of these words:</span></div>
+                        </div>
+                        <div class="searchbox_form">
+                            <div class="searchbox_form_inner"><input class="adv_search_input" id="none" name="as_eq" type="text"/></div>
+                        </div>
+                        <div class="searchbox_description">
+                            <div class="searchbox_description_inner">Put a minus sign just before words that you don't want: -rodent, -"Jack Russell"</div>
+                        </div>
+                    </div>
+
+                    <div class="adv_searchbox">
+                        <div class="searchbox_title">
+                            <div class="searchbox_title_inner"></div>
+                        </div>
+                        <div class="searchbox_form" style="text-align:right">
+                            <input class="adv_search_input" id="none" name="" type="submit" value="Advanced Search"/>
+                        </div>
+                        <div class="searchbox_description">
+                            <div class="searchbox_description_inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+
+
+
+    </body>
+</html>
