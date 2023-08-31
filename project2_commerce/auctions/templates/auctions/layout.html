@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}Auctions{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Auctions</h1>
+        </div>
+        <div class="col-md-8">
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-danger">{{ message }}</div>
+                {% endif %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+    <div>
+        {% if user.is_authenticated %}
+        Signed in as <strong>{{ user.username }}</strong>.
+        {% else %}
+        Not signed in.
+        {% endif %}
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a href="{% url 'create' %}" class="nav-link">Create Listing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+        </li>
+        <li>
+            <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+        </li>
+        <li>
+            <a class="nav-link" href="{% url 'watchlist' %}">Watchlist</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        {% endif %}
+    </ul>
+    <hr>
+    {% block body %}
+    {% endblock %}
+</body>
+
+</html>
